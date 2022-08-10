@@ -16,44 +16,74 @@ API-GAMES
 <td>type: String, unique: true</td>
 </tr>
 <tr>
-<td>ID</td>
-<td>Generado por Mongo</td>
+<td><strong>Password</strong></td>
+<td>type: String</td>
 </tr>
 <tr>
-<td>ID</td>
-<td>Generado por Mongo</td>
+<td><strong>Emoji</strong></td>
+<td>type: String</td>
 </tr>
 <tr>
-<td>ID</td>
-<td>Generado por Mongo</td>
+<td><strong>Games</strong></td>
+<td>Objet Id [id-game]</td>
 </tr>
 </table>
 
-user
+<table>
+<tr>
+<td><strong>GAME</strong></td>
+</tr>
+<tr>
+<td><strong>ID</strong></td>
+<td>type: Generado por Mongo</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>type: String, unique: true</td>
+</tr>
+<tr>
+<td><strong>Cover</strong></td>
+<td>type: String [Cloudinary, middleware]</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>type: String</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>enum[pc,ps,xbox, nintendo]</td>
+</tr>
+<tr>
+<td><strong>Creator</strong></td>
+<td>Object ID [id-creator]</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>type: String</td>
+</tr>
+</table>
 
-email - string unique
-password string
-emoji string
-games - [id-game]
 
-game
+<table>
+<tr>
+<td><strong>GAME</strong></td>
+</tr>
+<tr>
+<td><strong>ID</strong></td>
+<td>type: Generado por Mongo</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Object ID [id-game]</td>
+</tr>
+<tr>
+<td><strong>Photo</strong></td>
+<td>type: String [Cloudinary, middleware]</td>
+</tr>
+<tr>
+<td><strong>Games</strong></td>
+<td>Object ID [id-game]</td>
+</tr>
+</table>
 
-id - generado por mongo
-title string unique
-cover string [cloudinary middleware]
-date string
-platform enum[pc,ps,xbox, nintendo]
-creador - [id-creator]
-description string
 
-creator
-
-id - generado por mongo
-name - string
-games - [id-game]
-photo - string, [cloudinary middleware]
-
-app -> info abierta
-
-tipo - enum[free, free-premium, premium,]
-coste enum[0,2,5]
